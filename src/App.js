@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Jumbotron } from 'react-bootstrap';
+import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'tabler-react/dist/Tabler.css';
@@ -31,6 +31,21 @@ function App() {
             </Jumbotron>
             <StatsDailyTotal />
             <StatsByCountry />
+            <footer className='footer'>
+                <Container>
+                    <Row>
+                        <Col sm={12} className='text-center'>
+                            Made with ❤️ by Goran Ilic -{' '}
+                            <a
+                                href='https:ichmachdas.eu'
+                                rel='noopener noreferrer'
+                            >
+                                idea arts kreativagentur
+                            </a>
+                        </Col>
+                    </Row>
+                </Container>
+            </footer>
         </React.Fragment>
     );
 }
