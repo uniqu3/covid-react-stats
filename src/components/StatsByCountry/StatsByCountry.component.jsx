@@ -27,7 +27,7 @@ const StatsByCountry = () => {
                                 className='card-table table-vcenter'
                             >
                                 <Table.Header>
-                                    <tr>
+                                    <Table.Row>
                                         <th>Land</th>
                                         <th className='text-right'>
                                             Bestätigte Fälle
@@ -45,11 +45,11 @@ const StatsByCountry = () => {
                                         <th className='text-right'>
                                             Kritischer Zustand
                                         </th>
-                                    </tr>
+                                    </Table.Row>
                                 </Table.Header>
                                 <Table.Body>
                                     {isLoading ? (
-                                        <tr>
+                                        <Table.Row>
                                             <td colSpan='7'>
                                                 <div className='position-relative p-3 text-center'>
                                                     <Dimmer active loader>
@@ -59,7 +59,7 @@ const StatsByCountry = () => {
                                                     </Dimmer>
                                                 </div>
                                             </td>
-                                        </tr>
+                                        </Table.Row>
                                     ) : (
                                         isLoadingDone &&
                                         Object.keys(data).map((item, i) => (

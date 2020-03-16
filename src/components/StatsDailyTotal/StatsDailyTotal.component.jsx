@@ -24,6 +24,8 @@ const StatsDailyTotal = () => {
         },
     };
 
+    const includeKeys = ['cases', 'deaths', 'recovered'];
+
     return (
         <React.Fragment>
             <Container>
@@ -40,24 +42,26 @@ const StatsDailyTotal = () => {
                         </Grid.Col>
                     ) : (
                         isLoadingDone &&
-                        Object.keys(data).map((item, idx) => (
-                            <Grid.Col sm={12} md={4} key={idx}>
-                                <Card>
-                                    <Card.Body>
-                                        <div className='h5'>
-                                            {columnInfo[item].title}
-                                        </div>
-                                        <div className='display-4 font-weight-bold mb-4'>
-                                            <span
-                                                className={`${columnInfo[item].text}`}
-                                            >
-                                                {data[item]}
-                                            </span>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
-                            </Grid.Col>
-                        ))
+                        Object.keys(data)
+                            .filter(key => includeKeys.includes(key))
+                            .map((item, idx) => (
+                                <Grid.Col sm={12} md={4} key={idx}>
+                                    <Card>
+                                        <Card.Body>
+                                            <div className='h5'>
+                                                {columnInfo[item]?.title}
+                                            </div>
+                                            <div className='display-4 font-weight-bold mb-4'>
+                                                <span
+                                                    className={`${columnInfo[item]?.text}`}
+                                                >
+                                                    {data[item]}
+                                                </span>
+                                            </div>
+                                        </Card.Body>
+                                    </Card>
+                                </Grid.Col>
+                            ))
                     )}
                 </Grid.Row>
             </Container>
