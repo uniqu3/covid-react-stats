@@ -35,7 +35,7 @@ const StatsDailyTotal = () => {
             )}
             {isLoading ? (
                 <Grid.Col
-                    sm={12}
+                    xs={12}
                     className='position-relative p-3 justify-content-center align-items-center d-flex flex-row'
                 >
                     <Dimmer active loader>
@@ -47,7 +47,7 @@ const StatsDailyTotal = () => {
                 Object.keys(data)
                     .filter(key => includeKeys.includes(key))
                     .map((item, idx) => (
-                        <Grid.Col sm={12} md={4} key={idx}>
+                        <Grid.Col width={12} md={4} key={idx}>
                             <Card>
                                 <Card.Body>
                                     <div className='h5'>

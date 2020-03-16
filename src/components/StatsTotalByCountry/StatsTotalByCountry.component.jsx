@@ -16,7 +16,7 @@ const StatsTotalByCountry = ({ country }) => {
                     {isError}
                 </Alert>
             )}
-            <Grid.Col sm={12}>
+            <Grid.Col width={12}>
                 <Card>
                     <Card.Header>Fälle in Österreich</Card.Header>
                     <Card.Body>
@@ -29,7 +29,7 @@ const StatsTotalByCountry = ({ country }) => {
                         ) : (
                             isLoadingDone && (
                                 <Grid.Row>
-                                    <Grid.Col md={4}>
+                                    <Grid.Col width={12} md={4}>
                                         <div className='h5'>
                                             Bestätigte Fälle
                                         </div>
@@ -42,7 +42,7 @@ const StatsTotalByCountry = ({ country }) => {
                                             </small>
                                         </div>
                                     </Grid.Col>
-                                    <Grid.Col md={4}>
+                                    <Grid.Col width={12} md={4}>
                                         <div className='h5'>Todesfälle</div>
                                         <div className='mb-4'>
                                             <span className='display-4 font-weight-bold'>
@@ -53,7 +53,7 @@ const StatsTotalByCountry = ({ country }) => {
                                             </small>
                                         </div>
                                     </Grid.Col>
-                                    <Grid.Col md={4}>
+                                    <Grid.Col width={12} md={4}>
                                         <div className='h5'>
                                             Genesene Personen
                                         </div>
