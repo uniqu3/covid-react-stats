@@ -3,7 +3,7 @@ import { Grid, Card, Alert, Dimmer, Table } from 'tabler-react';
 
 import useDataApi from '../../services/useStatsData';
 
-const StatsByCountry = () => {
+const StatsCountriesTotal = () => {
     const API_URL = process.env.REACT_APP_API_URL;
     const { data, isLoading, isError, isLoadingDone } = useDataApi(
         `${API_URL}/countries`
@@ -11,7 +11,11 @@ const StatsByCountry = () => {
 
     return (
         <React.Fragment>
-            {isError && <Alert variant='danger'>{isError}</Alert>}
+            {isError && (
+                <Alert type='danger' icon='alert-triangle'>
+                    {isError}
+                </Alert>
+            )}
             <Grid.Col sm={12}>
                 <Card>
                     <Card.Header>
@@ -86,4 +90,4 @@ const StatsByCountry = () => {
     );
 };
 
-export default StatsByCountry;
+export default StatsCountriesTotal;

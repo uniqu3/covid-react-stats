@@ -13,11 +13,12 @@ const useDataApi = url => {
             try {
                 const result = await axios(url);
                 setData(result.data);
+                setIsLoadingDone(true);
+                setIsLoading(false);
             } catch (error) {
-                setIsError(error);
+                setIsLoading(false);
+                setIsError(error.toString());
             }
-            setIsLoadingDone(true);
-            setIsLoading(false);
         };
         fetchData();
     }, [url]);

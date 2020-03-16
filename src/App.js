@@ -7,7 +7,7 @@ import Header from './components/Header/Header.component';
 import Footer from './components/Footer/Footer.component';
 
 import DashboardPage from './pages/DashboardPage';
-import CountryStatsPage from './pages/CountryStatsPage';
+import CountriesStatsPage from './pages/CountriesStatsPage';
 
 import './App.css';
 
@@ -21,7 +21,7 @@ function App() {
                     <Route
                         exact
                         path='/country-stats'
-                        component={CountryStatsPage}
+                        component={CountriesStatsPage}
                     />
                 </Switch>
             </div>

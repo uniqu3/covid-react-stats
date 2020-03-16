@@ -28,7 +28,11 @@ const StatsDailyTotal = () => {
 
     return (
         <React.Fragment>
-            {isError && <Alert variant='danger'>{isError}</Alert>}
+            {isError && (
+                <Alert type='danger' icon='alert-triangle'>
+                    {isError}
+                </Alert>
+            )}
             {isLoading ? (
                 <Grid.Col
                     sm={12}

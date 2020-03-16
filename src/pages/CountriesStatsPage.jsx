@@ -1,16 +1,16 @@
 import React from 'react';
 import { Container, Grid } from 'tabler-react';
 
-import StatsByCountry from '../components/StatsByCountry/StatsByCountry.component';
+import StatsCountriesTotal from '../components/StatsCountriesTotal/StatsCountriesTotal.component';
 
-const CountryStatsPage = () => (
+const CountriesStatsPage = () => (
     <React.Fragment>
         <Container>
             <Grid.Row>
-                <StatsByCountry />
+                <StatsCountriesTotal />
             </Grid.Row>
         </Container>
     </React.Fragment>
 );
 
-export default CountryStatsPage;
+export default CountriesStatsPage;
