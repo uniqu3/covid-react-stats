@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { Container, Nav } from 'tabler-react';
 
 const Header = () => {
@@ -12,8 +12,12 @@ const Header = () => {
             <div className='header'>
                 <Container>
                     <Nav>
-                        <Nav.Item to='/'>Home</Nav.Item>
-                        <Nav.Item to='/country-stats'>Länder</Nav.Item>
+                        <Nav.Item LinkComponent={Link} to='/'>
+                            Home
+                        </Nav.Item>
+                        <Nav.Item LinkComponent={Link} to='/country-stats'>
+                            Länder
+                        </Nav.Item>
                     </Nav>
                 </Container>
             </div>
