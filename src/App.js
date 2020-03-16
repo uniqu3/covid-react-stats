@@ -1,7 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Grid } from 'tabler-react';
 import 'tabler-react/dist/Tabler.css';
 
 import StatsDailyTotal from './components/StatsDailyTotal/StatsDailyTotal.component';
@@ -16,7 +14,7 @@ function App() {
 
     return (
         <React.Fragment>
-            <Jumbotron fluid>
+            <div className='jumbotron jumbotron-fluid'>
                 <Container>
                     <small className='float-right font-weight-bold d-inline-block text-small text-right'>
                         {formattedDate}
@@ -28,22 +26,26 @@ function App() {
                         SARS-CoV-2)
                     </p>
                 </Container>
-            </Jumbotron>
+            </div>
             <StatsDailyTotal />
             <StatsByCountry />
             <footer className='footer'>
                 <Container>
-                    <Row>
-                        <Col sm={12} className='text-center'>
-                            Made with ❤️ by Goran Ilic -{' '}
+                    <Grid.Row>
+                        <Grid.Col sm={12} className='text-center'>
+                            Made with
+                            <span role='img' aria-label='love'>
+                                ❤️
+                            </span>
+                            by Goran Ilic -
                             <a
-                                href='https:ichmachdas.eu'
+                                href='https://ichmachdas.eu'
                                 rel='noopener noreferrer'
                             >
                                 idea arts kreativagentur
                             </a>
-                        </Col>
-                    </Row>
+                        </Grid.Col>
+                    </Grid.Row>
                 </Container>
             </footer>
         </React.Fragment>

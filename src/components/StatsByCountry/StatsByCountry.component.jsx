@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, Alert, Table } from 'tabler-react';
-import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Container, Grid, Card, Alert, Dimmer, Table } from 'tabler-react';
 
 import useDataApi from '../../services/useStatsData';
 
@@ -13,9 +12,9 @@ const StatsByCountry = () => {
     return (
         <React.Fragment>
             <Container>
-                <Row>
+                <Grid.Row>
                     {isError && <Alert variant='danger'>{isError}</Alert>}
-                    <Col sm={12}>
+                    <Grid.Col sm={12}>
                         <Card>
                             <Card.Header>
                                 <h3 className='card-title'>
@@ -50,16 +49,15 @@ const StatsByCountry = () => {
                                 </Table.Header>
                                 <Table.Body>
                                     {isLoading ? (
-                                        <tr className='position-relative p-3 text-center'>
+                                        <tr>
                                             <td colSpan='7'>
-                                            <Spinner
-                                                animation='border'
-                                                role='status'
-                                            >
-                                                <span className='sr-only'>
-                                                    Loading...
-                                                </span>
-                                            </Spinner>
+                                                <div className='position-relative p-3 text-center'>
+                                                    <Dimmer active loader>
+                                                        <span className='sr-only'>
+                                                            Loading...
+                                                        </span>
+                                                    </Dimmer>
+                                                </div>
                                             </td>
                                         </tr>
                                     ) : (
@@ -91,8 +89,8 @@ const StatsByCountry = () => {
                                 </Table.Body>
                             </Table>
                         </Card>
-                    </Col>
-                </Row>
+                    </Grid.Col>
+                </Grid.Row>
             </Container>
         </React.Fragment>
     );

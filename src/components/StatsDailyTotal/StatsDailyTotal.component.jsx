@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, Alert } from 'tabler-react';
-import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Container, Grid, Card, Alert, Dimmer } from 'tabler-react';
 
 import useDataApi from '../../services/useStatsData';
 
@@ -28,21 +27,21 @@ const StatsDailyTotal = () => {
     return (
         <React.Fragment>
             <Container>
-                <Row>
+                <Grid.Row>
                     {isError && <Alert variant='danger'>{isError}</Alert>}
                     {isLoading ? (
-                        <Col
+                        <Grid.Col
                             sm={12}
                             className='position-relative p-3 justify-content-center align-items-center d-flex flex-row'
                         >
-                            <Spinner animation='border' role='status'>
+                            <Dimmer active loader>
                                 <span className='sr-only'>Loading...</span>
-                            </Spinner>
-                        </Col>
+                            </Dimmer>
+                        </Grid.Col>
                     ) : (
                         isLoadingDone &&
                         Object.keys(data).map((item, idx) => (
-                            <Col sm={12} md={4} key={idx}>
+                            <Grid.Col sm={12} md={4} key={idx}>
                                 <Card>
                                     <Card.Body>
                                         <div className='h5'>
@@ -57,10 +56,10 @@ const StatsDailyTotal = () => {
                                         </div>
                                     </Card.Body>
                                 </Card>
-                            </Col>
+                            </Grid.Col>
                         ))
                     )}
-                </Row>
+                </Grid.Row>
             </Container>
         </React.Fragment>
     );
